@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modeláž nehtů Lenka Švandová — Hlinsko | Nehtové studio</title>
+<meta name="description" content="Profesionální modeláž nehtů na rukou i nohou v Hlinsku. Praxe od roku 2008, kvalitní materiály, individuální přístup. Objednávky na tel. +420 728 065 247.">
+<meta name="keywords" content="modeláž nehtů Hlinsko, nehtové studio Hlinsko, gelové nehty Hlinsko, Lenka Švandová">
+<meta property="og:title" content="Modeláž nehtů Lenka Švandová — Hlinsko">
+<meta property="og:description" content="Profesionální modeláž nehtů v Hlinsku s praxí od roku 2008.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": "Modeláž nehtů Lenka Švandová",
+  "description": "Profesionální modeláž nehtů na rukou i nohou v Hlinsku s praxí od roku 2008.",
+  "url": "https://www.modelaznehtu-lenkasvandova.cz",
+  "telephone": "+420728065247",
+  "email": "lenkasvandovacz@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Nádražní 548",
+    "addressLocality": "Hlinsko v Čechách",
+    "postalCode": "539 01",
+    "addressCountry": "CZ"
+  },
+  "openingHours": "Mo-Sa by appointment",
+  "priceRange": "350-800 Kč"
+}
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF7F4;
+    --rose: #C9847A;
+    --rose-light: #F2E8E6;
+    --rose-dark: #8B4F47;
+    --dark: #1C1714;
+    --dark2: #2A2320;
+    --gold: #B8935A;
+    --muted: #7A6E6B;
+    --border: rgba(201,132,122,0.2);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 3rem;
+    background: rgba(250,247,244,0.93);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 2px 24px rgba(28,23,20,0.06); }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 400;
+    letter-spacing: 0.03em; color: var(--dark);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none; transition: color 0.2s;
+    padding-bottom: 2px; border-bottom: 1px solid transparent;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--rose); border-bottom-color: var(--rose); }
+  .nav-cta {
+    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    background: var(--rose); color: #fff; padding: 0.65rem 1.5rem;
+    text-decoration: none; border-radius: 2px; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--rose-dark); }
+  .nav-hamburger {
+    display: none; flex-direction: column; gap: 5px; cursor: pointer;
+    background: none; border: none; padding: 4px;
+  }
+  .nav-hamburger span {
+    display: block; width: 22px; height: 1px; background: var(--dark); transition: all 0.3s;
+  }
+  .mobile-menu {
+    display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--cream); z-index: 999; flex-direction: column;
+    align-items: center; justify-content: center; gap: 2.5rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 300; color: var(--dark);
+    text-decoration: none; letter-spacing: 0.05em;
+  }
+  .mobile-menu a:hover { color: var(--rose); }
+  .mobile-close {
+    position: absolute; top: 1.5rem; right: 2rem;
+    background: none; border: none; font-size: 2rem; cursor: pointer; color: var(--muted);
+  }
+
+  /* ── PAGES ── */
+  .page { display: none; padding-top: 70px; }
+  .page.active { display: block; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: calc(100vh - 70px);
+    display: grid; grid-template-columns: 1fr 1fr;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 5rem 4rem 5rem 3rem;
+  }
+  .hero-tag {
+    display: flex; align-items: center; gap: 1rem;
+    font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--rose); margin-bottom: 2rem;
+  }
+  .hero-tag::before { content: ''; width: 36px; height: 1px; background: var(--rose); }
+  .hero-h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5.5vw, 5rem);
+    font-weight: 300; line-height: 1.1;
+    color: var(--dark); margin-bottom: 1.8rem;
+  }
+  .hero-sub {
+    font-size: 0.92rem; line-height: 1.9; color: var(--muted);
+    max-width: 380px; margin-bottom: 3rem; font-weight: 300;
+  }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+  .btn-rose {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--rose); color: #fff;
+    padding: 0.85rem 1.8rem; border-radius: 2px;
+    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .btn-rose:hover { background: var(--rose-dark); }
+  .btn-outline {
+    display: inline-flex; align-items: center;
+    border: 1px solid rgba(28,23,20,0.3); color: var(--dark);
+    padding: 0.85rem 1.8rem; border-radius: 2px;
+    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+    text-decoration: none; transition: border-color 0.2s, color 0.2s;
+    background: transparent; cursor: pointer;
+  }
+  .btn-outline:hover { border-color: var(--rose); color: var(--rose); }
+  .hero-right {
+    background: var(--rose-light);
+    position: relative; overflow: hidden;
+  }
+  .hero-blob {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -54%);
+    width: 75%; padding-bottom: 95%;
+  }
+  .hero-blob svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .hero-stats {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    background: rgba(250,247,244,0.92); backdrop-filter: blur(8px);
+    border-top: 1px solid var(--border);
+  }
+  .hero-stat {
+    padding: 1.4rem 1rem; text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .hero-stat:last-child { border-right: none; }
+  .hero-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem; font-weight: 600; color: var(--dark); display: block;
+  }
+  .hero-stat-label {
+    font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); margin-top: 0.2rem; display: block;
+  }
+
+  /* ── MARQUEE ── */
+  .marquee-wrap {
+    background: var(--dark); padding: 1rem 0; overflow: hidden;
+  }
+  .marquee-track {
+    display: flex; width: max-content;
+    animation: marquee 28s linear infinite;
+  }
+  .marquee-track:hover { animation-play-state: paused; }
+  .marquee-item {
+    font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.38); white-space: nowrap; padding: 0 2rem;
+    display: flex; align-items: center; gap: 2rem;
+  }
+  .marquee-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--rose); flex-shrink: 0; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* ── SECTIONS ── */
+  .section { padding: 6rem 3rem; }
+  .section-sm { padding: 4rem 3rem; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    display: flex; align-items: center; gap: 1rem;
+    font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--rose); margin-bottom: 1.2rem;
+  }
+  .section-label::before { content: ''; width: 36px; height: 1px; background: var(--rose); }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300;
+    line-height: 1.2; color: var(--dark); margin-bottom: 3rem;
+  }
+  .section-title em { font-style: italic; color: var(--rose); }
+
+  /* ── SERVICE CARDS ── */
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .service-card {
+    border: 1px solid var(--border); padding: 2.5rem 2rem;
+    border-radius: 2px; transition: border-color 0.3s, transform 0.3s;
+    cursor: default;
+  }
+  .service-card:hover { border-color: rgba(201,132,122,0.5); transform: translateY(-2px); }
+  .service-num {
+    font-size: 0.68rem; letter-spacing: 0.2em; color: var(--rose);
+    margin-bottom: 1.2rem; display: block;
+  }
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 300; color: var(--dark);
+    margin-bottom: 0.8rem; line-height: 1.3;
+  }
+  .service-desc {
+    font-size: 0.85rem; line-height: 1.8; color: var(--muted);
+    margin-bottom: 1.8rem; font-weight: 300;
+  }
+  .service-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; color: var(--gold);
+  }
+
+  /* ── TESTIMONIAL ── */
+  .testimonial-section {
+    background: var(--dark); padding: 6rem 3rem;
+  }
+  .testimonial-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+  }
+  .testimonial-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+    font-weight: 300; font-style: italic;
+    color: rgba(250,247,244,0.9); line-height: 1.5; margin-bottom: 2rem;
+  }
+  .testimonial-author {
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+  }
+  .review-cards { display: flex; flex-direction: column; gap: 1.2rem; }
+  .review-card {
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 1.5rem; border-radius: 2px;
+    background: rgba(255,255,255,0.03);
+  }
+  .review-stars { color: var(--gold); font-size: 0.85rem; letter-spacing: 0.1em; margin-bottom: 0.8rem; }
+  .review-text {
+    font-size: 0.85rem; line-height: 1.8;
+    color: rgba(255,255,255,0.55); margin-bottom: 0.8rem; font-weight: 300;
+  }
+  .review-name { font-size: 0.72rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.25); }
+
+  /* ── ABOUT TEASER ── */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .blob-placeholder {
+    width: 100%; aspect-ratio: 3/4; max-width: 380px;
+    position: relative; overflow: hidden;
+  }
+  .blob-placeholder svg { width: 100%; height: 100%; }
+  .values-list { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2.5rem; }
+  .value-item { display: flex; align-items: center; gap: 0.8rem; }
+  .value-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--rose); flex-shrink: 0; }
+  .value-text { font-size: 0.88rem; color: var(--dark); }
+  .link-arrow {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--rose); text-decoration: none; border-bottom: 1px solid var(--rose);
+    padding-bottom: 2px; transition: opacity 0.2s; cursor: pointer; background: none; border-top: none; border-left: none; border-right: none;
+  }
+  .link-arrow:hover { opacity: 0.7; }
+
+  /* ── VOUCHER BANNER ── */
+  .voucher-banner {
+    background: rgba(201,132,122,0.12);
+    padding: 4rem 3rem; text-align: center;
+  }
+  .voucher-banner h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 300; margin-bottom: 1rem;
+  }
+  .voucher-banner p {
+    font-size: 0.9rem; color: var(--muted); margin-bottom: 2rem; font-weight: 300;
+  }
+
+  /* ── PAGE HERO ── */
+  .page-hero {
+    background: var(--dark); padding: 5rem 3rem;
+    text-align: center;
+  }
+  .page-hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 6vw, 5rem); font-weight: 300;
+    color: rgba(250,247,244,0.95); margin-bottom: 1rem;
+  }
+  .page-hero p {
+    font-size: 0.9rem; color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+
+  /* ── O MNĚ PAGE ── */
+  .about-main { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: start; padding: 6rem 3rem; }
+  .value-card {
+    border-left: 2px solid var(--rose); padding: 1.2rem 1.5rem;
+    margin-bottom: 1rem; background: rgba(201,132,122,0.04);
+  }
+  .value-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 400; color: var(--dark); margin-bottom: 0.4rem;
+  }
+  .value-card-text { font-size: 0.85rem; line-height: 1.7; color: var(--muted); font-weight: 300; }
+  .cta-strip {
+    background: var(--dark); padding: 4rem 3rem; text-align: center;
+  }
+  .cta-strip h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem; font-weight: 300; color: rgba(250,247,244,0.9); margin-bottom: 2rem;
+  }
+
+  /* ── CENÍK ── */
+  .price-section { padding: 5rem 3rem; }
+  .price-validity {
+    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 3rem;
+  }
+  .price-category { margin-bottom: 3rem; }
+  .price-category-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 400; color: var(--dark);
+    margin-bottom: 0; padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 0.5rem;
+  }
+  .price-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.9rem 0; border-bottom: 1px solid rgba(201,132,122,0.1);
+    transition: background 0.15s;
+  }
+  .price-row:hover { background: rgba(201,132,122,0.04); margin: 0 -0.5rem; padding-left: 0.5rem; padding-right: 0.5rem; }
+  .price-name { font-size: 0.9rem; color: var(--dark); font-weight: 300; }
+  .price-note { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; }
+  .price-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; color: var(--gold); white-space: nowrap; margin-left: 1rem;
+  }
+  .price-callout {
+    display: flex; align-items: flex-start; gap: 0.8rem;
+    padding: 1rem 1.2rem; border-radius: 2px; margin-bottom: 1rem;
+    font-size: 0.85rem; font-weight: 300; line-height: 1.6;
+  }
+  .price-callout.green { background: rgba(90,150,90,0.08); color: #3a6b3a; border-left: 2px solid #6aaa6a; }
+  .price-callout.amber { background: rgba(184,147,90,0.1); color: #7a5a20; border-left: 2px solid var(--gold); }
+  .price-callouts { margin-top: 2rem; }
+  .voucher-box {
+    background: var(--rose-light); padding: 2.5rem; border-radius: 2px; margin-top: 3rem;
+  }
+  .voucher-box h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem; font-weight: 300; margin-bottom: 0.8rem;
+  }
+  .voucher-box p { font-size: 0.88rem; line-height: 1.8; color: var(--muted); margin-bottom: 1.5rem; font-weight: 300; }
+
+  /* ── REZERVACE ── */
+  .rezervace-main {
+    max-width: 680px; margin: 0 auto; padding: 6rem 2rem; text-align: center;
+  }
+  .rezervace-main h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; font-weight: 300; margin-bottom: 1rem;
+  }
+  .rezervace-main p { font-size: 0.9rem; color: var(--muted); line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300; }
+  .phone-btn {
+    display: inline-flex; align-items: center; gap: 0.8rem;
+    background: var(--rose); color: #fff; padding: 1.1rem 2.5rem;
+    border-radius: 2px; text-decoration: none; margin-bottom: 1.5rem;
+    font-size: 1rem; letter-spacing: 0.05em; transition: background 0.2s;
+  }
+  .phone-btn:hover { background: var(--rose-dark); }
+  .phone-btn-note { font-size: 0.82rem; color: var(--muted); font-style: italic; margin-bottom: 3rem; font-weight: 300; }
+  .storno-card {
+    border: 1px solid var(--border); padding: 2.5rem; border-radius: 2px;
+    text-align: left; margin-top: 2rem;
+  }
+  .storno-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 400; margin-bottom: 1rem;
+  }
+  .storno-card p { font-size: 0.87rem; line-height: 1.9; color: var(--muted); font-weight: 300; }
+  .contact-strip {
+    background: var(--dark); padding: 3rem;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+    text-align: center;
+  }
+  .contact-item-label {
+    font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(255,255,255,0.3); margin-bottom: 0.5rem;
+  }
+  .contact-item-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: rgba(250,247,244,0.85);
+  }
+  .contact-item-value a { color: inherit; text-decoration: none; }
+  .contact-item-value a:hover { color: var(--rose); }
+
+  /* ── INSPIRACE ── */
+  .inspirace-grid {
+    padding: 4rem 3rem 6rem;
+    columns: 3; column-gap: 1rem;
+  }
+  .gallery-item {
+    break-inside: avoid; margin-bottom: 1rem; border-radius: 2px; overflow: hidden;
+  }
+  .gallery-blob {
+    width: 100%; display: block;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 3rem;
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; align-items: start;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; color: rgba(250,247,244,0.7); margin-bottom: 0.5rem;
+  }
+  .footer-tagline { font-size: 0.75rem; color: rgba(255,255,255,0.25); font-weight: 300; }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .footer-links a {
+    font-size: 0.78rem; color: rgba(255,255,255,0.35); text-decoration: none;
+    letter-spacing: 0.08em; transition: color 0.2s; cursor: pointer; background: none; border: none;
+  }
+  .footer-links a:hover { color: var(--rose); }
+  .footer-contact { font-size: 0.82rem; color: rgba(255,255,255,0.35); line-height: 2; font-weight: 300; }
+  .footer-contact a { color: inherit; text-decoration: none; }
+  .footer-contact a:hover { color: var(--rose); }
+  .footer-bottom {
+    background: var(--dark); padding: 1.2rem 3rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    text-align: center;
+    font-size: 0.7rem; color: rgba(255,255,255,0.2); letter-spacing: 0.08em;
+  }
+
+  /* ── FADE UP ANIMATION ── */
+  .fade-up {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links, .nav-cta { display: none; }
+    .nav-hamburger { display: flex; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { min-height: 320px; }
+    .hero-left { padding: 3rem 1.5rem; }
+    .section, .section-sm { padding: 4rem 1.5rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .testimonial-grid { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.5rem; }
+    .testimonial-section { padding: 0; }
+    .about-grid, .about-main { grid-template-columns: 1fr; gap: 2.5rem; padding: 4rem 1.5rem; }
+    .blob-placeholder { max-width: 260px; }
+    .contact-strip { grid-template-columns: 1fr; }
+    footer { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; }
+    .inspirace-grid { columns: 2; padding: 3rem 1.5rem; }
+    .price-section { padding: 4rem 1.5rem; }
+    .voucher-banner { padding: 3rem 1.5rem; }
+    .rezervace-main { padding: 4rem 1.5rem; }
+    .page-hero { padding: 4rem 1.5rem; }
+  }
+  @media (max-width: 520px) {
+    .inspirace-grid { columns: 1; }
+    .hero-h1 { font-size: 2.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" onclick="showPage('uvod')">Lenka Švandová</a>
+  <ul class="nav-links">
+    <li><a onclick="showPage('uvod')" class="active" id="nav-uvod">Úvod</a></li>
+    <li><a onclick="showPage('omne')" id="nav-omne">O mně</a></li>
+    <li><a onclick="showPage('sluzby')" id="nav-sluzby">Služby & Ceník</a></li>
+    <li><a onclick="showPage('rezervace')" id="nav-rezervace">Rezervace</a></li>
+    <li><a onclick="showPage('inspirace')" id="nav-inspirace">Inspirace</a></li>
+  </ul>
+  <a class="nav-cta" onclick="showPage('rezervace')">Rezervovat</a>
+  <button class="nav-hamburger" onclick="openMobileMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMobileMenu()">✕</button>
+  <a onclick="showPage('uvod');closeMobileMenu()">Úvod</a>
+  <a onclick="showPage('omne');closeMobileMenu()">O mně</a>
+  <a onclick="showPage('sluzby');closeMobileMenu()">Služby & Ceník</a>
+  <a onclick="showPage('rezervace');closeMobileMenu()">Rezervace</a>
+  <a onclick="showPage('inspirace');closeMobileMenu()">Inspirace</a>
+  <a class="btn-rose" onclick="showPage('rezervace');closeMobileMenu()" href="tel:+420728065247">Rezervovat</a>
+</div>
+
+<!-- ═══════════════ PAGE: ÚVOD ═══════════════ -->
+<div class="page active" id="page-uvod">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-tag fade-up">Nehtové studio · Hlinsko</div>
+      <h1 class="hero-h1 fade-up" style="transition-delay:0.1s">Krása v každém detailu</h1>
+      <p class="hero-sub fade-up" style="transition-delay:0.2s">
+        Profesionální modeláž nehtů na rukou i nohou s praxí od roku 2008.
+        Kvalitní materiály, poctivá práce a příjemná atmosféra v Hlinsku.
+      </p>
+      <div class="hero-btns fade-up" style="transition-delay:0.3s">
+        <a class="btn-rose" href="tel:+420728065247">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.18 2 2 0 012.1 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+          Rezervovat termín
+        </a>
+        <button class="btn-outline" onclick="showPage('sluzby')">Zobrazit ceník</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-blob">
+        <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="blobGrad" cx="40%" cy="35%" r="65%">
+              <stop offset="0%" stop-color="#e8c5c0"/>
+              <stop offset="60%" stop-color="#d4978f"/>
+              <stop offset="100%" stop-color="#c9847a"/>
+            </radialGradient>
+          </defs>
+          <path d="M200,30 C280,20 360,80 380,180 C400,280 350,400 250,450 C150,500 60,440 30,340 C0,240 40,120 100,70 C140,40 160,38 200,30 Z" fill="url(#blobGrad)" opacity="0.7"/>
+          <path d="M200,60 C265,52 330,100 348,185 C365,268 325,370 238,412 C150,454 72,402 48,313 C24,223 60,118 112,78 C148,52 162,66 200,60 Z" fill="url(#blobGrad)" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-num">15+</span>
+          <span class="hero-stat-label">let praxe</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">500+</span>
+          <span class="hero-stat-label">klientek</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-num">5★</span>
+          <span class="hero-stat-label">hodnocení</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span class="marquee-item">Gelové nehty <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Akrylové nehty <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Japonská manikúra <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Pedikúra <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Nail art <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Zpevňování nehtů <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Dárkové poukázky <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Parafínový zábal <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Gelové nehty <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Akrylové nehty <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Japonská manikúra <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Pedikúra <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Nail art <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Zpevňování nehtů <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Dárkové poukázky <span class="marquee-dot"></span></span>
+      <span class="marquee-item">Parafínový zábal <span class="marquee-dot"></span></span>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">Co nabízím</div>
+      <h2 class="section-title">Služby pro <em>dokonalé nehty</em></h2>
+      <div class="services-grid">
+        <div class="service-card fade-up">
+          <span class="service-num">01</span>
+          <div class="service-name">Modeláž na rukou</div>
+          <p class="service-desc">Gelová nebo akrylová modeláž s dlouhou trvanlivostí. Prodloužení od 800 Kč, potažení od 650 Kč.</p>
+          <span class="service-price">od 650 Kč</span>
+        </div>
+        <div class="service-card fade-up" style="transition-delay:0.1s">
+          <span class="service-num">02</span>
+          <div class="service-name">Pedikúra & nohy</div>
+          <p class="service-desc">Kompletní péče o nehty na nohou včetně úpravy kůžičky. Relaxační zážitek od začátku do konce.</p>
+          <span class="service-price">od 350 Kč</span>
+        </div>
+        <div class="service-card fade-up" style="transition-delay:0.2s">
+          <span class="service-num">03</span>
+          <div class="service-name">Nail art & zdobení</div>
+          <p class="service-desc">Francouzská manikúra, ombré, babyboom, kamínky, fimo a další zdobení dle vašeho přání.</p>
+          <span class="service-price">od 10 Kč / nehet</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <div class="testimonial-section">
+    <div class="testimonial-grid">
+      <div class="fade-up">
+        <div class="section-label" style="color:rgba(255,255,255,0.3)">
+          <span style="display:block;width:36px;height:1px;background:var(--rose)"></span>
+          Recenze klientek
+        </div>
+        <blockquote class="testimonial-quote">
+          „Lenka je absolutní profesionálka. K Lence chodím už 5 let a nikdy jsem nebyla zklamaná."
+        </blockquote>
+        <p class="testimonial-author">— Markéta K., Hlinsko</p>
+      </div>
+      <div class="review-cards fade-up" style="transition-delay:0.15s">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Vždy perfektní výsledek, příjemné prostředí a skvělý přístup. Nehty drží krásně a vždy odcházím nadšená.</p>
+          <p class="review-name">Petra S.</p>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Nehty drží krásně a vždy odcházím nadšená. Doporučuji všem! Lenka má zlaté ruce.</p>
+          <p class="review-name">Jana M.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About teaser -->
+  <section class="section">
+    <div class="container about-grid">
+      <div class="fade-up">
+        <div class="blob-placeholder">
+          <svg viewBox="0 0 380 480" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="aboutGrad" cx="45%" cy="40%" r="60%">
+                <stop offset="0%" stop-color="#f0dbd7"/>
+                <stop offset="100%" stop-color="#d4978f"/>
+              </radialGradient>
+            </defs>
+            <path d="M190,25 C255,15 330,65 355,160 C380,255 340,375 248,425 C155,475 70,425 40,330 C10,235 45,110 100,62 C138,30 148,32 190,25 Z" fill="url(#aboutGrad)"/>
+            <text x="190" y="245" text-anchor="middle" font-family="Cormorant Garamond" font-size="13" fill="rgba(139,79,71,0.5)" letter-spacing="3">FOTKA BRZY</text>
+          </svg>
+        </div>
+      </div>
+      <div class="fade-up" style="transition-delay:0.15s">
+        <div class="section-label">O mně</div>
+        <h2 class="section-title" style="margin-bottom:1.5rem">Lenka <em>Švandová</em></h2>
+        <p style="font-size:0.9rem;line-height:1.9;color:var(--muted);margin-bottom:2rem;font-weight:300">
+          Jmenuji se Lenka Švandová a nehtovému designu se věnuji od roku 2008.
+          Mou prioritou je kvalitní práce, příjemná atmosféra a individuální přístup ke každé klientce.
+        </p>
+        <div class="values-list">
+          <div class="value-item"><div class="value-dot"></div><span class="value-text">Neustálý rozvoj a sledování trendů</span></div>
+          <div class="value-item"><div class="value-dot"></div><span class="value-text">Kvalita materiálů a hygiena</span></div>
+          <div class="value-item"><div class="value-dot"></div><span class="value-text">Individuální přístup ke každé klientce</span></div>
+        </div>
+        <button class="link-arrow" onclick="showPage('omne')">Zjistit více →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Voucher banner -->
+  <div class="voucher-banner fade-up">
+    <h2>Dárkové poukázky</h2>
+    <p>Skvělý dárek pro každou příležitost. Vystavím na jakoukoli službu či částku dle vašeho přání.</p>
+    <a class="btn-rose" href="tel:+420728065247">Informace o poukázkách</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <div class="footer-logo">Lenka Švandová</div>
+      <div class="footer-tagline">Modeláž nehtů · Hlinsko v Čechách</div>
+    </div>
+    <ul class="footer-links">
+      <li><a onclick="showPage('uvod')">Úvod</a></li>
+      <li><a onclick="showPage('omne')">O mně</a></li>
+      <li><a onclick="showPage('sluzby')">Služby & Ceník</a></li>
+      <li><a onclick="showPage('rezervace')">Rezervace</a></li>
+      <li><a onclick="showPage('inspirace')">Inspirace</a></li>
+    </ul>
+    <div class="footer-contact">
+      Nádražní 548<br>539 01 Hlinsko v Čechách<br>
+      <a href="tel:+420728065247">+420 728 065 247</a><br>
+      <a href="mailto:lenkasvandovacz@gmail.com">lenkasvandovacz@gmail.com</a>
+    </div>
+  </footer>
+  <div class="footer-bottom">© 2025 Modeláž nehtů Lenka Švandová · Hlinsko v Čechách</div>
+
+</div>
+
+<!-- ═══════════════ PAGE: O MNĚ ═══════════════ -->
+<div class="page" id="page-omne">
+  <div class="page-hero">
+    <h1>O mně</h1>
+    <p>Lenka Švandová · Hlinsko</p>
+  </div>
+  <div class="about-main container">
+    <div class="fade-up">
+      <div class="blob-placeholder">
+        <svg viewBox="0 0 380 480" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="aboutGrad2" cx="45%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#f0dbd7"/>
+              <stop offset="100%" stop-color="#d4978f"/>
+            </radialGradient>
+          </defs>
+          <path d="M190,25 C255,15 330,65 355,160 C380,255 340,375 248,425 C155,475 70,425 40,330 C10,235 45,110 100,62 C138,30 148,32 190,25 Z" fill="url(#aboutGrad2)"/>
+          <text x="190" y="245" text-anchor="middle" font-family="Cormorant Garamond" font-size="13" fill="rgba(139,79,71,0.5)" letter-spacing="3">FOTKA BRZY</text>
+        </svg>
+      </div>
+    </div>
+    <div class="fade-up" style="transition-delay:0.1s">
+      <div class="section-label">Můj příběh</div>
+      <h2 class="section-title" style="margin-bottom:1.5rem">Jmenuji se <em>Lenka Švandová</em></h2>
+      <p style="font-size:0.92rem;line-height:1.9;color:var(--muted);margin-bottom:2.5rem;font-weight:300">
+        Nehtovému designu se intenzivně věnuji již od roku 2008. Za tu dobu mi rukama prošly stovky spokojených klientek. Svou práci beru jako řemeslo, které vyžaduje preciznost, trpělivost a cit pro detail.
+      </p>
+      <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;margin-bottom:1.2rem">Na čem si zakládám</h3>
+      <div class="value-card fade-up">
+        <div class="value-card-title">Neustálý rozvoj</div>
+        <p class="value-card-text">Svět nehtů se mění, proto pravidelně jezdím na školení a sleduji aktuální trendy ve zdobení i tvarech.</p>
+      </div>
+      <div class="value-card fade-up" style="transition-delay:0.05s">
+        <div class="value-card-title">Kvalita a hygiena</div>
+        <p class="value-card-text">Pracuji s materiály, kterým věřím. Hygiena v salonu je pro mě naprostou samozřejmostí.</p>
+      </div>
+      <div class="value-card fade-up" style="transition-delay:0.1s">
+        <div class="value-card-title">Individuální přístup</div>
+        <p class="value-card-text">Ať už toužíte po výrazném zdobení, francouzské manikúře nebo přirozeném vzhledu, společně najdeme styl, který vám sedne.</p>
+      </div>
+    </div>
+  </div>
+  <div class="cta-strip">
+    <h2>Zaujalo vás to? Rezervujte si termín.</h2>
+    <a class="btn-rose" href="tel:+420728065247">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.18 2 2 0 012.1 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+      +420 728 065 247
+    </a>
+  </div>
+  <div class="contact-strip">
+    <div><div class="contact-item-label">Adresa</div><div class="contact-item-value">Nádražní 548, Hlinsko</div></div>
+    <div><div class="contact-item-label">Telefon</div><div class="contact-item-value"><a href="tel:+420728065247">+420 728 065 247</a></div></div>
+    <div><div class="contact-item-label">E-mail</div><div class="contact-item-value"><a href="mailto:lenkasvandovacz@gmail.com">lenkasvandovacz@gmail.com</a></div></div>
+  </div>
+  <footer>
+    <div><div class="footer-logo">Lenka Švandová</div><div class="footer-tagline">Modeláž nehtů · Hlinsko v Čechách</div></div>
+    <ul class="footer-links">
+      <li><a onclick="showPage('uvod')">Úvod</a></li><li><a onclick="showPage('omne')">O mně</a></li>
+      <li><a onclick="showPage('sluzby')">Služby & Ceník</a></li><li><a onclick="showPage('rezervace')">Rezervace</a></li>
+    </ul>
+    <div class="footer-contact">Nádražní 548<br>539 01 Hlinsko v Čechách<br><a href="tel:+420728065247">+420 728 065 247</a></div>
+  </footer>
+  <div class="footer-bottom">© 2025 Modeláž nehtů Lenka Švandová · Hlinsko v Čechách</div>
+</div>
+
+<!-- ═══════════════ PAGE: SLUŽBY ═══════════════ -->
+<div class="page" id="page-sluzby">
+  <div class="page-hero">
+    <h1>Služby & Ceník</h1>
+    <p>Nehtové studio Hlinsko</p>
+  </div>
+  <div class="price-section container">
+    <p class="price-validity">Ceník platný od 1. 9. 2025</p>
+
+    <div class="price-category fade-up">
+      <h3 class="price-category-title">Modeláž nehtů</h3>
+      <div class="price-row">
+        <div><div class="price-name">Nová modeláž — Prodloužení</div></div>
+        <div class="price-amount">800 Kč</div>
+      </div>
+      <div class="price-row">
+        <div><div class="price-name">Nová modeláž — Potažení</div></div>
+        <div class="price-amount">650 Kč</div>
+      </div>
+      <div class="price-row">
+        <div><div class="price-name">Doplnění gelu</div><div class="price-note">3–4 týdny</div></div>
+        <div class="price-amount">540 Kč</div>
+      </div>
+      <div class="price-row">
+        <div><div class="price-name">Doplnění gelu</div><div class="price-note">5–6 týdnů</div></div>
+        <div class="price-amount">560 Kč</div>
+      </div>
+      <div class="price-row">
+        <div><div class="price-name">Oprava nehtu</div></div>
+        <div class="price-amount">60 Kč</div>
+      </div>
+      <div class="price-row">
+        <div><div class="price-name">Sundání nehtové modeláže</div></div>
+        <div class="price-amount">150 Kč</div>
+      </div>
+    </div>
+
+    <div class="price-category fade-up">
+      <h3 class="price-category-title">Zdobení</h3>
+      <div class="price-row">
+        <div><div class="price-name">Francouzská, celogel</div></div>
+        <div class="price-amount">70 Kč</div>
+      </div>
+      <div class="price-row">
+        <div><div class="price-name">Kombinace barev</div></div>
+        <div class="price-amount">10 Kč</div>
+      </div>
+      <div class="price-row">
+        <div><div class="price-name">Zdobení</div></div>
+        <div class="price-amount">10 Kč</div>
+      </div>
+      <div class="price-row">
+        <div><div class="price-name">Babyboom, Ombré</div></div>
+        <div class="price-amount">70 Kč</div>
+      </div>
+      <div class="price-row">
+        <div><div class="price-name">Aplikace kamínku, fimo a podobné</div><div class="price-note">První, každý další 1 Kč</div></div>
+        <div class="price-amount">10 Kč</div>
+      </div>
+    </div>
+
+    <div class="price-category fade-up">
+      <h3 class="price-category-title">Nohy & ostatní</h3>
+      <div class="price-row">
+        <div><div class="price-name">Modeláž nehtů na nohou</div></div>
+        <div class="price-amount">350 Kč</div>
+      </div>
+      <div class="price-row">
+        <div><div class="price-name">P. Shine</div></div>
+        <div class="price-amount">175 Kč</div>
+      </div>
+      <div class="price-row">
+        <div><div class="price-name">Parafínový zábal</div></div>
+        <div class="price-amount">100 Kč</div>
+      </div>
+    </div>
+
+    <div class="price-callouts fade-up">
+      <div class="price-callout green">✓ Ošetření kůžičky olejem, podlakování a podgelování je zdarma</div>
+      <div class="price-callout amber">⚠ Při délce okraje delší než ½ ploténky účtuji navíc 20 % z ceny doplnění</div>
+    </div>
+
+    <div class="voucher-box fade-up">
+      <h3>Dárkové poukázky</h3>
+      <p>Dárkové poukazy ráda vystavím na jakoukoli službu či částku dle vašeho přání. Objednávky přijímám telefonicky, vyzvednutí probíhá osobně v salonu po předchozí domluvě. Zasílání elektronických poukazů není možné.</p>
+      <a class="btn-rose" href="tel:+420728065247">Zavolat a objednat</a>
+    </div>
+  </div>
+  <div class="contact-strip">
+    <div><div class="contact-item-label">Adresa</div><div class="contact-item-value">Nádražní 548, Hlinsko</div></div>
+    <div><div class="contact-item-label">Telefon</div><div class="contact-item-value"><a href="tel:+420728065247">+420 728 065 247</a></div></div>
+    <div><div class="contact-item-label">E-mail</div><div class="contact-item-value"><a href="mailto:lenkasvandovacz@gmail.com">lenkasvandovacz@gmail.com</a></div></div>
+  </div>
+  <footer>
+    <div><div class="footer-logo">Lenka Švandová</div><div class="footer-tagline">Modeláž nehtů · Hlinsko v Čechách</div></div>
+    <ul class="footer-links">
+      <li><a onclick="showPage('uvod')">Úvod</a></li><li><a onclick="showPage('omne')">O mně</a></li>
+      <li><a onclick="showPage('sluzby')">Služby & Ceník</a></li><li><a onclick="showPage('rezervace')">Rezervace</a></li>
+    </ul>
+    <div class="footer-contact">Nádražní 548<br>539 01 Hlinsko v Čechách<br><a href="tel:+420728065247">+420 728 065 247</a></div>
+  </footer>
+  <div class="footer-bottom">© 2025 Modeláž nehtů Lenka Švandová · Hlinsko v Čechách</div>
+</div>
+
+<!-- ═══════════════ PAGE: REZERVACE ═══════════════ -->
+<div class="page" id="page-rezervace">
+  <div class="page-hero">
+    <h1>Rezervace</h1>
+    <p>Objednání termínu</p>
+  </div>
+  <div class="rezervace-main">
+    <h2>Pro objednání termínu mě prosím kontaktujte výhradně telefonicky.</h2>
+    <p>Těším se na vás v salonu. Zavolejte mi a domluvíme termín, který vám nejlépe vyhovuje.</p>
+    <div>
+      <a class="phone-btn" href="tel:+420728065247">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.18 2 2 0 012.1 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+        +420 728 065 247
+      </a>
+    </div>
+    <p class="phone-btn-note">Pokud telefon nezvedám, pravděpodobně se věnuji jiné klientce. Zanechte mi zprávu a já vám zavolám zpět, jakmile to bude možné.</p>
+    <div class="storno-card fade-up">
+      <h3>Storno podmínky</h3>
+      <p>Vážím si vašeho i svého času. Pokud se nemůžete dostavit na smluvený termín, dejte mi to prosím vědět nejpozději 48 hodin předem. Ráda váš termín nabídnu jiné zájemkyni.</p>
+      <br>
+      <p>Při zrušení termínu méně než 48 hodin předem nebo v případě, že se bez omluvy nedostavíte, budu při vaší příští návštěvě účtovat storno poplatek ve výši 50 % z ceny neuskutečněné služby.</p>
+    </div>
+  </div>
+  <div class="contact-strip">
+    <div><div class="contact-item-label">Adresa</div><div class="contact-item-value">Nádražní 548, Hlinsko</div></div>
+    <div><div class="contact-item-label">Telefon</div><div class="contact-item-value"><a href="tel:+420728065247">+420 728 065 247</a></div></div>
+    <div><div class="contact-item-label">Otevírací doba</div><div class="contact-item-value">Dle objednání</div></div>
+  </div>
+  <footer>
+    <div><div class="footer-logo">Lenka Švandová</div><div class="footer-tagline">Modeláž nehtů · Hlinsko v Čechách</div></div>
+    <ul class="footer-links">
+      <li><a onclick="showPage('uvod')">Úvod</a></li><li><a onclick="showPage('omne')">O mně</a></li>
+      <li><a onclick="showPage('sluzby')">Služby & Ceník</a></li><li><a onclick="showPage('rezervace')">Rezervace</a></li>
+    </ul>
+    <div class="footer-contact">Nádražní 548<br>539 01 Hlinsko v Čechách<br><a href="tel:+420728065247">+420 728 065 247</a></div>
+  </footer>
+  <div class="footer-bottom">© 2025 Modeláž nehtů Lenka Švandová · Hlinsko v Čechách</div>
+</div>
+
+<!-- ═══════════════ PAGE: INSPIRACE ═══════════════ -->
+<div class="page" id="page-inspirace">
+  <div class="page-hero">
+    <h1>Inspirace</h1>
+    <p>Ukázky mé práce</p>
+  </div>
+  <div class="inspirace-grid">
+    <div class="gallery-item fade-up"><svg class="gallery-blob" viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="380" fill="#f0dbd7"/><text x="150" y="200" text-anchor="middle" font-family="Cormorant Garamond" font-size="11" fill="rgba(139,79,71,0.4)" letter-spacing="2">FOTKA BRZY</text></svg></div>
+    <div class="gallery-item fade-up"><svg class="gallery-blob" viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#e8c5c0"/><text x="150" y="138" text-anchor="middle" font-family="Cormorant Garamond" font-size="11" fill="rgba(139,79,71,0.4)" letter-spacing="2">FOTKA BRZY</text></svg></div>
+    <div class="gallery-item fade-up"><svg class="gallery-blob" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="300" fill="#f5e8e5"/><text x="150" y="158" text-anchor="middle" font-family="Cormorant Garamond" font-size="11" fill="rgba(139,79,71,0.4)" letter-spacing="2">FOTKA BRZY</text></svg></div>
+    <div class="gallery-item fade-up"><svg class="gallery-blob" viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#dfc4be"/><text x="150" y="138" text-anchor="middle" font-family="Cormorant Garamond" font-size="11" fill="rgba(139,79,71,0.4)" letter-spacing="2">FOTKA BRZY</text></svg></div>
+    <div class="gallery-item fade-up"><svg class="gallery-blob" viewBox="0 0 300 400" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="400" fill="#f0dbd7"/><text x="150" y="208" text-anchor="middle" font-family="Cormorant Garamond" font-size="11" fill="rgba(139,79,71,0.4)" letter-spacing="2">FOTKA BRZY</text></svg></div>
+    <div class="gallery-item fade-up"><svg class="gallery-blob" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="300" fill="#e8c5c0"/><text x="150" y="158" text-anchor="middle" font-family="Cormorant Garamond" font-size="11" fill="rgba(139,79,71,0.4)" letter-spacing="2">FOTKA BRZY</text></svg></div>
+    <div class="gallery-item fade-up"><svg class="gallery-blob" viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="260" fill="#f5e8e5"/><text x="150" y="138" text-anchor="middle" font-family="Cormorant Garamond" font-size="11" fill="rgba(139,79,71,0.4)" letter-spacing="2">FOTKA BRZY</text></svg></div>
+    <div class="gallery-item fade-up"><svg class="gallery-blob" viewBox="0 0 300 380" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="380" fill="#dfc4be"/><text x="150" y="198" text-anchor="middle" font-family="Cormorant Garamond" font-size="11" fill="rgba(139,79,71,0.4)" letter-spacing="2">FOTKA BRZY</text></svg></div>
+    <div class="gallery-item fade-up"><svg class="gallery-blob" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="300" fill="#f0dbd7"/><text x="150" y="158" text-anchor="middle" font-family="Cormorant Garamond" font-size="11" fill="rgba(139,79,71,0.4)" letter-spacing="2">FOTKA BRZY</text></svg></div>
+  </div>
+  <p style="text-align:center;padding:0 1.5rem 4rem;font-size:0.85rem;color:var(--muted);font-style:italic;font-weight:300">Fotografie prací budou brzy doplněny.</p>
+  <footer>
+    <div><div class="footer-logo">Lenka Švandová</div><div class="footer-tagline">Modeláž nehtů · Hlinsko v Čechách</div></div>
+    <ul class="footer-links">
+      <li><a onclick="showPage('uvod')">Úvod</a></li><li><a onclick="showPage('omne')">O mně</a></li>
+      <li><a onclick="showPage('sluzby')">Služby & Ceník</a></li><li><a onclick="showPage('rezervace')">Rezervace</a></li>
+    </ul>
+    <div class="footer-contact">Nádražní 548<br>539 01 Hlinsko v Čechách<br><a href="tel:+420728065247">+420 728 065 247</a></div>
+  </footer>
+  <div class="footer-bottom">© 2025 Modeláž nehtů Lenka Švandová · Hlinsko v Čechách</div>
+</div>
+
+<script>
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  const navEl = document.getElementById('nav-' + id);
+  if (navEl) navEl.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  setTimeout(initFadeUp, 100);
+}
+
+function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); }
+function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+function initFadeUp() {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('#page-' + getCurrentPage() + ' .fade-up').forEach(el => obs.observe(el));
+}
+
+function getCurrentPage() {
+  const active = document.querySelector('.page.active');
+  return active ? active.id.replace('page-', '') : 'uvod';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(initFadeUp, 200);
+});
+</script>
+</body>
+</html>
